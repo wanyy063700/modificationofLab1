@@ -115,13 +115,14 @@ def calculateFeatures(message,tokens,pos,slangDictionary,lexicons,mpqa_lexicons,
     #the existence of slang
     x = hasSlang(tokens,slangDictionary)
     f.append(x)
-###########################################################
+
     
-    #x9 = numberofslang(tokens,slangDictionary)
+    #x = numberofslang(tokens,slangDictionary)
     #f.append(x)
     
-    x10 = numberofNegation(tokens,negationList)
+    x = numberofNegation(tokens,negationList)
     f.append(x)
+  #####################################################
 
     #Pos Based Features
 
@@ -170,8 +171,8 @@ def calculateFeatures(message,tokens,pos,slangDictionary,lexicons,mpqa_lexicons,
         f.append(2*(x6/float(s))-1)
         f.append(2*(x7/float(s))-1)
         f.append(2*(x8/float(s))-1)
-        #f.append(2*(x9/float(s))-1)
-        f.append(2*(x10/float(s))-1)
+       
+        
     except:
         f.append(0)
         f.append(0)
@@ -181,8 +182,8 @@ def calculateFeatures(message,tokens,pos,slangDictionary,lexicons,mpqa_lexicons,
         f.append(0)
         f.append(0)
         f.append(0)
-        #f.append(0)
-        f.append(0)
+        
+        
         
         f.append(x1/float(s))
         f.append(x2/float(s))
@@ -192,8 +193,8 @@ def calculateFeatures(message,tokens,pos,slangDictionary,lexicons,mpqa_lexicons,
         f.append(x6/float(s))
         f.append(x7/float(s))
         f.append(x8/float(s))
-        #f.append(x9/float(s))
-        f.append(x10/float(s))
+        
+        
 
     #Pos Tags Features
         
